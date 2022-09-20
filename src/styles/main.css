@@ -1,0 +1,65 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+.App {
+  background-color: #e5e5e5;
+  min-height: 35vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+}
+.input-container .label {
+  position: relative;
+  left: -5px;
+  color: rgb(0, 0, 0);
+  margin: 0 0 0.8rem 0;
+  font-size: 13px;
+  font-weight: bold;
+}
+.input-container .input {
+  padding: 0.8rem 0 0.8rem 0.7rem;
+  margin-right: 1.5rem;
+  outline: none;
+  border: none;
+  border-radius: 0.2rem;
+  width: 220px;
+}
+
+.days {
+  color: rgb(0, 0, 0);
+  font-size: 2rem;
+}
+
+@media only screen and (max-width: 800px) {
+  .container {
+    flex-direction: column;
+  }
+  .container .input-container {
+    margin: 1rem 0;
+  }
+  .days {
+    margin: 1rem 0;
+    font-size: 1.4rem;
+    text-align: center;
+    padding: 0 1rem;
+  }
+}/*# sourceMappingURL=main.css.map */
