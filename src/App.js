@@ -51,9 +51,9 @@ const days = new Array(31).fill(0).map((_, i) => i + 1);
 
 function App() {
   const [date, setDate] = useState({
-    day: "",
-    month: "",
-    year: "",
+    day: 0,
+    month: 0,
+    year: 0,
   });
   const [text, setText] = useState("");
   useEffect(() => {
@@ -172,10 +172,13 @@ function App() {
         </div>
       </div>
       <div className="days">
-        {/* get date from user is x days from now */}
-        {`${+date.month + 1}/${date.day}/${
-          date.year
-        } is ${howManyDays()} days from now`}
+        {howManyDays() < 0
+          ? `${+date.month + 1}/${date.day}/${date.year} was ${Math.abs(
+              howManyDays()
+            )} days from now`
+          : `${+date.month + 1}/${date.day}/${
+              date.year
+            } is ${howManyDays()} days from now`}
       </div>
     </div>
   );
