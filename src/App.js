@@ -116,15 +116,15 @@ function App() {
           <select
             name="months"
             className="input"
-            value={date.month}
+            value={date.month - 1}
             onChange={(e) => {
               const month = e.target.value;
               updateDate("month", month);
             }}
           >
-            {months.map((month) => {
+            {months.map((month, i) => {
               return (
-                <option key={month} value={month}>
+                <option key={month} value={i}>
                   {month}
                 </option>
               );
