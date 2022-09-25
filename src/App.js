@@ -70,7 +70,7 @@ function App() {
       return;
     }
     const day = fullDate.getDate();
-    const month = fullDate.getMonth() + 1;
+    const month = fullDate.getMonth();
     const year = fullDate.getFullYear();
 
     setDate({ day, month, year });
@@ -92,9 +92,10 @@ function App() {
     //Turning the dates into milliseconds in order to get the difference
     const currentDateMilliseconds = Date.now();
     const usersDateMilliseconds = Date.parse(
-      `${usersDate.month} ${usersDate.day} ${usersDate.year}`
+      `${months[usersDate.month]} ${usersDate.day} ${usersDate.year}`
     );
 
+    console.log(usersDate.month);
     //I now got the difference in milliseconds and turned milliseconds into value that represents days
     // i multiplied 1000 to represent seconds then 60 to represent a minute then 60 to represent an hour
     //then 24 to represent a day
@@ -116,7 +117,7 @@ function App() {
           <select
             name="months"
             className="input"
-            value={date.month - 1}
+            value={date.month}
             onChange={(e) => {
               const month = e.target.value;
               updateDate("month", month);
@@ -172,7 +173,7 @@ function App() {
       </div>
       <div className="days">
         {/* get date from user is x days from now */}
-        {`${date.month}/${date.day}/${
+        {`${+date.month + 1}/${date.day}/${
           date.year
         } is ${howManyDays()} days from now`}
       </div>
